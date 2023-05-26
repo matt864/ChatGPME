@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <title>ChatGPTMe</title>
+  <style>
+    body{
+      color: green;
+      background-color: black;
+      font-family: 'Press Start 2P', cursive;
+
+    }
+    #quiz {
+      text-align: center;
+      margin: 0 auto;
+      width: 75%;
+    }
+
+    #question {
+      font-size:35px;
+      margin-top:25vh;
+    }
+
+    .answer {
+      border: 3px solid white;
+      padding: 10px;
+      display: inline-block;
+      width: 50%;
+      margin: auto;
+    }
+    .answer:hover{
+      cursor:pointer;
+      transform: scale(1.2);
+    }
+
+    .correct {
+      background-color: green;
+      color:white;
+    }
+
+    .incorrect {
+        background-color: red;
+      color:white;
+    }
+    #answer-block{
+        display: grid;
+        margin-top:50px;
+        grid-template-columns: 1fr 1fr;
+    }
+    #end-score{
+    font-size: 50px;
+    line-height:65px;
+    position: absolute;
+    width: 50%;
+    margin-top: 35vh;
+    margin-left: 25%;
+    text-align: center;
+    display: none;
+    }
+    #logo{
+      width: 50px;
+      height:auto;
+      margin-right:10px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div id="quiz">
+    <h1><img id="logo" src="/images/ChatGPME.png">ChatGPTMe</h1>
+    <div id="question">What is the capital of France?</div>
+    <div id="answer-block">
+      <div class="answer" onclick="checkAnswer(0)">Paris</div>
+      <div class="answer" onclick="checkAnswer(1)">London</div>
+    </div>
+    </div>
+    <div id="answer"></div>
+  </div>
+<div id="end-score">0</div>
+  <script>
+    let level = 0;
+    let correctAnswers = 0;
+    var questions = [
+  {
+    question: "What is the capital of France?",
+    answers: ["Paris", "London"],
+    answer : 0
+  },
+  {
+    question: "What is the capital of the United States?",
+    answers: ["Washington, D.C.", "New York City"],
+    answer : 0
+  },
+  {
+    question: "What is the capital of Canada?",
+    answers: ["Ottawa", "Montreal"],
+    answer :0,
+  }
+];
+      var question = document.getElementById("question");
+      var answerDiv = document.getElementById("answer");
+    function checkAnswer(choiceNumber) {
+      document.getElementsByClassName("answer")[0].removeAttribute("onclick");
+      document.getElementsByClassName("answer")[1].removeAttribute("onclick");
+
+        if(choiceNumber === questions[level]["answer"]){
+            document.getElementsByClassName("answer")[choiceNumber].classList = "answer correct";
+            correctAnswers++
+            window.setTimeout(nextQuestion,1000)
+        }
+        else{
+            document.getElementsByClassName("answer")[choiceNumber].classList = "answer incorrect"
+            window.setTimeout(nextQuestion,1000)
+        }
+    }
+
+    function nextQuestion(){
+      document.getElementsByClassName("answer")[0].setAttribute("onclick","checkAnswer(0)");
+      document.getElementsByClassName("answer")[1].setAttribute("onclick","checkAnswer(1)");
+        level++
+        if(level>checkAnswer.length+1){
+            gameOver();
+            return
+        }
+        question.innerHTML = questions[level].question;
+        var answerBlocks = Array.from(document.getElementsByClassName("answer"));
+        for(let i=0;i<answerBlocks.length;i++){
+            var chunk = answerBlocks[i];
+            chunk.classList="answer";
+            chunk.innerHTML = questions[level]["answers"][i];
+        }
+    }
+    function gameOver(){
+        document.getElementById("quiz").style.display ="none";
+        document.getElementById("end-score").style.display ="block";
+        document.getElementById("end-score").innerHTML = "You got " + correctAnswers + " out of 10!";
+    }
+  </script>
+</body>
+</html>
