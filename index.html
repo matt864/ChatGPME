@@ -4,6 +4,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ChatGPTMe</title>
   <style>
     body{
@@ -15,6 +16,7 @@
     #quiz {
       text-align: center;
       margin: 0 auto;
+      display: none;
       width: 100%;
     }
 
@@ -25,13 +27,16 @@
     h2{
       margin-top:10vh;
       font-size:35px;
+      line-height: 42px;
     }
 
     .answer {
       border: 3px solid white;
       padding: 10px;
       display: inline-block;
-      width: 50%;
+      width: 75%;
+      line-height: 24px;
+      text-align: left;
       margin: auto;
     }
     .answer:hover{
@@ -56,10 +61,10 @@
     #end-score{
     font-size: 50px;
     line-height:65px;
-    position: absolute;
-    width: 50%;
-    margin-top: 35vh;
-    margin-left: 25%;
+    position: relative;
+    width: auto;
+    margin-top: 10vh;
+    margin-bottom: 40px;
     text-align: center;
     display: none;
     }
@@ -69,102 +74,180 @@
       margin-right:10px;
       display: inline-block;
     }
+    h1{
+      text-align: center;
+    }
+    #opening-frame{
+      width:75%;
+      margin: auto;
+      line-height: 24px;
+      margin-top: 5%;
+    }
+    #start-button{
+      border: 3px solid green;
+      padding:1%;
+      margin-top:30px;
+      width:fit-content;
+    }
+    #start-button:hover{
+      cursor: pointer;
+      background-color: green;
+      color: white;
+    }
+    .llm-answer{
+      color: red;
+    }
+    #end-screen{
+      width:75%;
+      margin: auto;
+      line-height:24px;
+    }
+    @media only screen and (max-width: 600px){
+      #opening-frame{
+        width:90%;
+        font-size:12px;
+      }
+      h1{
+        font-size:22px;
+      }
+      #logo{
+        width: 30px;
+      }
+      #start-button{
+        padding: 5px;
+        text-align: center;
+      }
+      h2 , #question,#end-score{
+        font-size:16px;
+        line-height:29px;
+      }
+      #answer-block{
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+      }
+      .answer{
+        font-size:12px;
+      }
+      .answer:hover{
+        transform: scale(1);
+      }
+      h2{
+        margin-top: 80px;
+      }
+      #end-screen{
+        width:90%;
+        font-size:12px;
+      }
+    }
   </style>
 </head>
 <body>
+  <h1><img id="logo" src="/images/ChatGPME.png">ChatGPMe</h1>
+  <div id="opening-frame">
+  Welcome! This project is designed to test how well a LLM can mimic me and whether it can trick you into thinking I wrote something. Here are the steps I took to make this project happen to ensure methodological soundness.
+  <ol>
+    <li>I came up with 10 prompts based on recent tech articles and industry events.</li>
+    <li>I answered these prompts myself first, so I wasn't swayed by whatever the AI wrote. I kept all answers under 300 characters</li>
+    <li>I then fed my latest 10 blogs in raw JSON form to the LLM Bard and asked it to mimic the author of the articles.</li>
+    <li>I then asked it the same 10 prompts, with a 300 character cap so lengths of responses didn't vary too much.</li>
+    <li>I recorded the outputs and randomly ordered them in this quiz!</li>
+  </ol>
+  You will be shown 10 prompts, with both mine and the LLMs response next to each other, in a randomised order. It's your job to guess correctly by <span class="llm-answer">clicking the answer you think I wrote.</span>
+  <div id="start-button" onclick="startGame()">Got it? Click here to start!</div>
+  </div>
   <div id="quiz">
-    <h1><img id="logo" src="/images/ChatGPME.png">ChatGPMe</h1>
     <h2>Prompt 1</h2>
-    <div id="question">What is your favourite programming language?</div>
+    <div id="question"></div>
     <div id="answer-block">
-      <div class="answer" onclick="checkAnswer(0)">Paris</div>
-      <div class="answer" onclick="checkAnswer(1)">London</div>
+      <div class="answer"></div>
+      <div class="answer"></div>
     </div>
     </div>
     <div id="answer"></div>
   </div>
+<div id="end-screen">
 <div id="end-score">0</div>
+</div>
   <script>
-    let level = 0;
+    let level = -1;
     let correctAnswers = 0;
     var questions = [
-  {
+    {
     question: "What is your favourite programming language?",
-    answers: ["Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."],
-    answer : 0
+    answers: ["My favorite programming language is Python. It's easy to learn, versatile, and powerful. I would recommend it to anyone who wants to learn to code.", "I learnt JavaScript and then pretty much stopped there and fell into the void of packages and libraries and Node.js."],
+    answer : 1
   },
   {
     question: "Who is going to win the AI war?",
-    answers: ["Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."],
-    answer : 0
+    answers: ["The company that is most likely to win is the one that is most open to collaboration.", "Microsoft are positioning themselves really well with their investment into OpenAI, but it's hard to tell at the pace the industry is moving. Ultimately whoever solves direct problems with their tech and avoids regulatory backlash will probably have the most success."],
+    answer : 1
   },
   {
     question: "Who is your favourite tech entrepreneur?",
-    answers: ["Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."],
+    answers: ["I would answer Grace Hopper here although she wasn't really an entrepreneur so I will say Steve Wozniak is probably my favourite, I love how he never lost any of his enthusiasm for technology, stayed humble despite insane success and absolutely biffed it on Dancing with the Stars.", "My favorite tech entrepreneur is Elon Musk. He is the founder and CEO of Tesla, SpaceX, and Neuralink. He is also a co-founder of PayPal and OpenAI. Musk is known for his ambitious goals and his willingness to take risks. He is also a strong advocate for renewable energy and space exploration."],
     answer :0,
   }
   ,
   {
     question: "What stock are you betting on right now and why?",
-    answers: ["Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."],
-    answer :0,
+    answers: ["Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", "Super easy to say after their stock skyrocketed, but Nvidia have shown a willingness to pivot and have positioned themselves to be a dominant force in the AI hardware game."],
+    answer :1,
   }
   ,
   {
     question: "What is the biggest workplace advancement coming in the next twenty years?",
-    answers: ["Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."],
-    answer :0,
+    answers: ["Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", "The 4 day work week is going to happen, and then you can bet your bottom dollar (or pound) that we are going to complain about 4 days of work. Also I think AI is going to be like Microsoft Office, just absolutely everywhere and we will all have to teach our 64 year old coworkers how to use it."],
+    answer :1,
   }
   ,
   {
     question: "Why did you build your website?",
-    answers: ["Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."],
+    answers: ["I was incredibly bored. I also just love building things from scratch, starting with an empty folder on my computer and typing like I'm trying to murder imaginary ants until there is something to show for it.", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."],
     answer :0,
   },
   {
     question: "Why do you like technology?",
-    answers: ["Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."],
+    answers: ["The hacky answer is that it accelerates the progress of humanity. The real answer is I loved Star Wars as a kid and I see it as a way to get my hands on a lightsaber.", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."],
     answer :0,
   }
   ,
   {
     question: "What is your dream job?",
-    answers: ["Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."],
+    answers: ["A developer or product manager building something that will change the world. Or olive farmer, whatever comes first.", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."],
     answer :0,
   }
   ,
   {
     question: "What are your opinions on the metaverse?",
-    answers: ["Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."],
-    answer :0,
+    answers: ["Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", "I think the vision is awesome, and from trying VR I absolutely loved it. However, I don't think people want to live there, the vision needs to be slightly smaller and primarily focused on gaming and communication, rather than commercialisation/all entertainment/financial."],
+    answer :1,
   }
   ,
   {
     question: "How can technology help the world?",
-    answers: ["Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."],
+    answers: ["By making things easier, quicker and more efficient, we can speed up progress and free up time for things that really matter, like throwing sticks in a river under a bridge and seeing which one comes out the other side first.", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."],
     answer :0,
   }
 ];
       var question = document.getElementById("question");
       var answerDiv = document.getElementById("answer");
-    function checkAnswer(choiceNumber) {
+    function checkAnswer(choiceNumber,el) {
       document.getElementsByClassName("answer")[0].removeAttribute("onclick");
       document.getElementsByClassName("answer")[1].removeAttribute("onclick");
 
         if(choiceNumber === questions[level]["answer"]){
-            document.getElementsByClassName("answer")[choiceNumber].classList = "answer correct";
+          el.classList="answer correct";
             correctAnswers++
             window.setTimeout(nextQuestion,1000)
         }
         else{
-            document.getElementsByClassName("answer")[choiceNumber].classList = "answer incorrect"
+          el.classList="answer incorrect";
             window.setTimeout(nextQuestion,1000)
         }
     }
 
     function nextQuestion(){
-      document.getElementsByClassName("answer")[0].setAttribute("onclick","checkAnswer(0)");
-      document.getElementsByClassName("answer")[1].setAttribute("onclick","checkAnswer(1)");
+      var randomNumber = Math.round(Math.random());
         level++
         document.getElementsByTagName("h2")[0].innerHTML = "Prompt " + (level +1)
         if(level===questions.length){
@@ -173,16 +256,52 @@
         }
         question.innerHTML = questions[level].question;
         var answerBlocks = Array.from(document.getElementsByClassName("answer"));
-        for(let i=0;i<answerBlocks.length;i++){
-            var chunk = answerBlocks[i];
-            chunk.classList="answer";
-            chunk.innerHTML = questions[level]["answers"][i];
-        }
+        var answerIndex = questions[level].answer
+        if(randomNumber===0){
+        answerBlocks[0].classList="answer";
+        answerBlocks[0].setAttribute("onclick","checkAnswer(" + answerIndex + ",this)");
+        answerBlocks[0].innerHTML = questions[level].answers[answerIndex];
+        var otherpicker;
+        if(answerIndex===0){otherpicker=1}
+        else { otherpicker=0}
+        answerBlocks[1].classList="answer";
+        answerBlocks[1].setAttribute("onclick","checkAnswer(" + otherpicker + ",this)");
+        answerBlocks[1].innerHTML = questions[level].answers[otherpicker];
+      }
+      else{
+        answerBlocks[1].classList="answer";
+        answerBlocks[1].setAttribute("onclick","checkAnswer(" + answerIndex + ",this)");
+        answerBlocks[1].innerHTML = questions[level].answers[answerIndex];
+        var otherpicker;
+        if(answerIndex===0){otherpicker=1}
+        else { otherpicker=0}
+        answerBlocks[0].classList="answer";
+        answerBlocks[0].setAttribute("onclick","checkAnswer(" + otherpicker + ",this)");
+        answerBlocks[0].innerHTML = questions[level].answers[otherpicker];
+      }
     }
     function gameOver(){
         document.getElementById("quiz").style.display ="none";
         document.getElementById("end-score").style.display ="block";
         document.getElementById("end-score").innerHTML = "You got " + correctAnswers + " out of 10!";
+        var stringtoadd = "";
+        for (let i=0;i<questions.length;i++){
+          var chunk = questions[i];
+          var question = "<h2>Prompt : " + chunk.question + "</h2><br><br>";
+          var mattanswer = "<span class='matt-answer'>My answer : " + chunk.answers[chunk.answer] + "</span><br><br>";
+          var otherpicker;
+          if(chunk.answer===0){otherpicker=1}
+          else{otherpicker=0};
+          var gptanswer = "<span class='llm-answer'>Bard's answer : " + chunk.answers[otherpicker] + "</span><br><br>";
+          stringtoadd += question+mattanswer+gptanswer;
+        }
+        document.getElementById("end-screen").innerHTML += stringtoadd;
+    }
+    function startGame(){
+      document.getElementById("opening-frame").style.display="none";
+      document.getElementById("quiz").style.display="block";
+      nextQuestion();
+
     }
   </script>
 </body>
