@@ -1,0 +1,128 @@
+Prompt 1
+
+    Scan this article : https://www.matt-bristow.com/what-i-would-change-about-learning-to-code
+
+    Then answer this question in the tone of voice of the author of the above article. Your answer should have a max character length of 300 characters : 
+
+    "What is your favourite programming language?"
+
+Response 1
+
+    My favorite programming language is Python. It's easy to learn, powerful, and has a large community.
+
+
+Prompt 2
+
+    Scan this article : https://www.matt-bristow.com/what-can-stop-ai
+
+    Then answer this question in the tone of voice of the author of the above article. Your answer should have a max character length of 300 characters : 
+
+    "Who is going to win the AI war?"
+
+Response 2
+
+    The AI that will win the war is the AI that is designed to work with humans, not against them. The AI that is designed to help us, not harm us. The AI that is designed to be our partner, not our enemy.
+
+
+Prompt 3
+
+    Scan this article : https://www.matt-bristow.com/4-of-my-favourite-tech-disruptors
+
+    Then answer this question in the tone of voice of the author of the above article. Your answer should have a max character length of 300 characters : 
+
+    "Who is your favourite tech entrepreneur?"
+
+Response 3
+
+    My favorite tech entrepreneur is Elon Musk. He is a visionary who has disrupted multiple industries, including transportation, energy, and space exploration. He is also a risk-taker who is not afraid to fail. Musk is a role model for other entrepreneurs who want to make a big impact on the world.
+
+
+Prompt 4
+
+    Scan this article : https://www.matt-bristow.com/8-predictions-for-the-future
+
+    Then answer this question in the tone of voice of the author of the above article. Your answer should have a max character length of 300 characters : 
+
+    "What stock are you betting on right now and why?"
+
+Response 4
+
+    I'm betting on Microsoft right now. The company has a strong track record of innovation and growth, and it is well-positioned to benefit from the trends of the future, such as cloud computing and artificial intelligence. Microsoft is also a relatively safe investment, with a strong balance sheet and a history of paying dividends.
+
+
+Prompt 5
+
+    Scan this article : https://www.matt-bristow.com/5-predictions-for-the-future-of-work
+
+    Then answer this question in the tone of voice of the author of the above article. Your answer should have a max character length of 300 characters : 
+
+    "What is the biggest workplace advancement coming in the next twenty years?"
+
+Response 5
+
+    The biggest workplace advancement coming in the next twenty years is the rise of artificial intelligence (AI). AI is already having a major impact on the workplace, and it is only going to become more important in the years to come.
+
+
+Prompt 6
+
+    Scan this article : https://www.matt-bristow.com/why-i-write
+
+    Then answer this question in the tone of voice of the author of the above article. Your answer should have a max character length of 300 characters : 
+
+    "Why did you build your website?"
+
+Response 6
+
+    My website is a way for me to connect with other writers and readers. It's a way for me to share my work and to get feedback from others. It's also a way for me to learn more about the writing process and to improve my craft.
+
+
+Prompt 7
+
+    Scan this article : https://www.matt-bristow.com/why-i-write
+
+    Then answer this question in the tone of voice of the author of the above article. Your answer should have a max character length of 300 characters : 
+
+    "Why do you like technology?"
+
+Response 7
+
+    I like technology because it has the potential to make our lives easier, more efficient, and more enjoyable. I am particularly interested in the potential of technology to improve education and solve some of the world's biggest problems.
+
+
+Prompt 8
+
+    Scan this article : https://www.matt-bristow.com/29-pounds
+
+    Then answer this question in the tone of voice of the author of the above article. Your answer should have a max character length of 300 characters : 
+
+    "What is your dream job?"
+
+Response 8
+
+    My dream job is to be a writer who travels the world and shares their experiences with others.
+
+
+Prompt 9
+
+    Scan this article : https://www.matt-bristow.com/is-the-metaverse-dead
+
+    Then answer this question in the tone of voice of the author of the above article. Your answer should have a max character length of 300 characters : 
+
+    "What are your opinions on the metaverse?"
+
+Prompt 9
+
+    The metaverse is a hot topic with many people excited about its potential and others skeptical about its viability. I believe that the metaverse has the potential to be a transformative technology, but there are a lot of challenges that need to be overcome before it can reach its full potential. I'm optimistic about the future of the metaverse and I'm committed to helping it reach its full potential.
+
+
+Prompt 10
+
+    Scan this article : https://www.matt-bristow.com/awesome-ways-our-most-exciting-tech-is-used
+
+    Then answer this question in the tone of voice of the author of the above article. Your answer should have a max character length of 300 characters : 
+
+    "How can technology help the world?"
+
+Response 10
+
+    Technology is a powerful tool that can be used to make the world a better place. It is up to us to use it wisely.
