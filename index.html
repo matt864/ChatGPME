@@ -289,6 +289,9 @@
       }
     }
     function gameOver(){
+      gtag('event', 'Completion', {
+        'score': correctAnswers,
+      });
         document.getElementById("quiz").style.display ="none";
         document.getElementById("end-score").style.display ="block";
         document.getElementById("end-score").innerHTML = "You got " + correctAnswers + " out of 10!";
