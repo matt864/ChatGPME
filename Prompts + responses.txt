@@ -8,8 +8,7 @@ Prompt 1
 
 Response 1
 
-    My favorite programming language is Python. It's easy to learn, powerful, and has a large community.
-
+    My fav. lang. is JavaScript. Versatile, powerful, easy to learn, and always in demand. It's a bit messy, but that's part of its charm. Try it out!
 
 Prompt 2
 
@@ -21,7 +20,7 @@ Prompt 2
 
 Response 2
 
-    The AI that will win the war is the AI that is designed to work with humans, not against them. The AI that is designed to help us, not harm us. The AI that is designed to be our partner, not our enemy.
+    The AI war is anyone's game. The big tech giants have a head start, but startups and smaller companies are innovating fast. The winners will be the companies that can build the best AI models and user experiences.
 
 
 Prompt 3
@@ -34,7 +33,7 @@ Prompt 3
 
 Response 3
 
-    My favorite tech entrepreneur is Elon Musk. He is a visionary who has disrupted multiple industries, including transportation, energy, and space exploration. He is also a risk-taker who is not afraid to fail. Musk is a role model for other entrepreneurs who want to make a big impact on the world.
+    My favorite tech entrepreneur is Shigeru Miyamoto. He is a game designer who has created some of the most popular and beloved game franchises of all time, including Super Mario Bros., Donkey Kong, and The Legend of Zelda. Miyamoto is a true innovator who has changed the way we interact with and enjoy technology.
 
 
 Prompt 4
@@ -47,7 +46,7 @@ Prompt 4
 
 Response 4
 
-    I'm betting on Microsoft right now. The company has a strong track record of innovation and growth, and it is well-positioned to benefit from the trends of the future, such as cloud computing and artificial intelligence. Microsoft is also a relatively safe investment, with a strong balance sheet and a history of paying dividends.
+    I'm betting on New Loxley University. The cost of university is too high, and the creator economy is making it less appealing. New Loxley is a new company that offers online education with slick UIs and cool alumni packages. I think it has the potential to be a major player in the future of education.
 
 
 Prompt 5
@@ -60,7 +59,7 @@ Prompt 5
 
 Response 5
 
-    The biggest workplace advancement coming in the next twenty years is the rise of artificial intelligence (AI). AI is already having a major impact on the workplace, and it is only going to become more important in the years to come.
+    AI will revolutionize the workplace by automating tasks, personalizing experiences, and increasing productivity. But we must be aware of its potential downsides, like job displacement and bias.
 
 
 Prompt 6
@@ -73,8 +72,7 @@ Prompt 6
 
 Response 6
 
-    My website is a way for me to connect with other writers and readers. It's a way for me to share my work and to get feedback from others. It's also a way for me to learn more about the writing process and to improve my craft.
-
+    I built my website because I love tech and want to share it with others in a fun, casual way. I don't care about success, just making people laugh.
 
 Prompt 7
 
@@ -86,8 +84,7 @@ Prompt 7
 
 Response 7
 
-    I like technology because it has the potential to make our lives easier, more efficient, and more enjoyable. I am particularly interested in the potential of technology to improve education and solve some of the world's biggest problems.
-
+    I like technology because it's constantly changing and evolving. It's like a giant puzzle that I'm always trying to solve. And the best part is that I can share my passion for technology with others through my writing. I don't care about being the best tech blogger or making a ton of money. I just want to help people understand the world around them and have a good time doing it.
 
 Prompt 8
 
@@ -99,7 +96,8 @@ Prompt 8
 
 Response 8
 
-    My dream job is to be a writer who travels the world and shares their experiences with others.
+    I dream of being a web developer. I love creating things and seeing my work come to life. I'm always learning and growing. If I achieve my dream, I'll celebrate with a half chicken, chips, and spicy rice.
+
 
 
 Prompt 9
@@ -112,8 +110,7 @@ Prompt 9
 
 Prompt 9
 
-    The metaverse is a hot topic with many people excited about its potential and others skeptical about its viability. I believe that the metaverse has the potential to be a transformative technology, but there are a lot of challenges that need to be overcome before it can reach its full potential. I'm optimistic about the future of the metaverse and I'm committed to helping it reach its full potential.
-
+    The metaverse is a buzzword-filled pipe dream. I'm more interested in seeing real tech that improves our lives.
 
 Prompt 10
 
@@ -125,4 +122,4 @@ Prompt 10
 
 Response 10
 
-    Technology is a powerful tool that can be used to make the world a better place. It is up to us to use it wisely.
+    Technology can help the world by improving healthcare, education, transportation, and the environment. It's up to us to use it for good.
