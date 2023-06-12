@@ -256,6 +256,7 @@
 
     function nextQuestion(){
       var randomNumber = Math.round(Math.random());
+      window.scrollTo({top: 0, behavior: 'smooth'});
         level++
         document.getElementsByTagName("h2")[0].innerHTML = "Prompt " + (level +1)
         if(level===questions.length){
